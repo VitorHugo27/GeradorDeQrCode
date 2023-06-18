@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "GerarQrCode";
+}
+
+<h1>GerarQrCode</h1>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <form asp-action="GerarQrCode" asp-controller="GeradorQrCode" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Digite para gerar O Qr Code</label>
+                        <input type="text" name="palavra" class="form-control" id="palavra">
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+
+                @if (ViewBag.QrCodeImage != null)
+                {
+                    <img src="@ViewBag.QrCodeImage" style="max-height: 400px; max-width: 400px; object-fit: cover;" alt="" />
+                }
+            </div>
+        </div>
+    </div>
+</body>
