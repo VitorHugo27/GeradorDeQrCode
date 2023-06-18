@@ -1,8 +1,13 @@
 ﻿@{
+    Layout = "_Layout_QrCode";
     ViewData["Title"] = "GerarQrCode";
 }
 
-<h1>GerarQrCode</h1>
+@*<h1>Gerar Qr Code</h1>*@
+
+<br />
+
+<br />
 
 <body>
     <div class="container">
@@ -21,6 +26,8 @@
                 @if (ViewBag.QrCodeImage != null)
                 {
                     <img src="@ViewBag.QrCodeImage" style="max-height: 400px; max-width: 400px; object-fit: cover;" alt="" />
+                }else{
+                    <span style="color: red;">Por Favor Digite algo</span>
                 }
             </div>
         </div>
