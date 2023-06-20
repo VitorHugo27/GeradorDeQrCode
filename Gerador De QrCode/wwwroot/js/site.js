@@ -1,4 +1,20 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿$(document).ready(function () {
+    // Quando o botão de download for clicado
+    $('#btnDownload').click(function () {
+        // Obter a URL da imagem do QR code
+        var qrCodeUrl = $('#qrCodeImage').attr('src');
 
-// Write your JavaScript code.
+        // Extrair o nome do arquivo do URL
+        var fileName = qrCodeUrl.substring(qrCodeUrl.lastIndexOf('/') + 1);
+
+        // Criar um elemento <a> temporário
+        var link = document.createElement('a');
+        link.href = qrCodeUrl;
+        link.download = fileName;
+
+        // Adicionar o elemento <a> temporário à página e disparar o evento de clique
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+});

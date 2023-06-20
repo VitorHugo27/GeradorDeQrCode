@@ -20,5 +20,28 @@ html {
 body {
     margin-bottom: 60px;
     background-color: #FFFAFA;
+    font-family: 'Carter One', cursive;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    flex-shrink: 0;
+    background-color: #f8f8f8;
+    padding: 10px;
+    min-height: 80px; /* Altura mínima do footer */
+    max-height: 120px; /* Altura máxima do footer */
+}

@@ -15,7 +15,7 @@
             <div class="col-md-12 text-center">
                 <form asp-action="GerarQrCode" asp-controller="GeradorQrCode" method="post">
                     <div class="mb-3">
-                        <label class="form-label">Digite para gerar O Qr Code</label>
+                        <label class="form-label">Digite para gerar o Qr Code</label>
                         <input type="text" name="palavra" class="form-control" id="palavra">
                     </div>
                     <div class="d-grid gap-2 col-6 mx-auto">
@@ -25,7 +25,8 @@
 
                 @if (ViewBag.QrCodeImage != null)
                 {
-                    <img src="@ViewBag.QrCodeImage" style="max-height: 400px; max-width: 400px; object-fit: cover;" alt="" />
+                    <img src="@ViewBag.QrCodeImage" id="qrCodeImage" style="max-height: 400px; max-width: 400px; object-fit: cover;" alt="" />
+                    <button class="btn btn-success" id="btnDownload" style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">Download QR Code</button>
                 }else{
                     <span style="color: red;">Por Favor Digite algo</span>
                 }
